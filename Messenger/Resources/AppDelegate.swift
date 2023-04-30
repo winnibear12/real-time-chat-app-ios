@@ -10,6 +10,7 @@ import FirebaseCore
 import FirebaseAnalytics
 import FirebaseAuth
 import FacebookCore
+import FBSDKCoreKit
 
 
 @main
