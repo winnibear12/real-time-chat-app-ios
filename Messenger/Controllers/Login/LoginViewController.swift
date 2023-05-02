@@ -10,6 +10,7 @@ import FirebaseAuth
 import FacebookLogin
 import JGProgressHUD
 
+
 class LoginViewController: UIViewController {
     
     private let spinner = JGProgressHUD(style: .dark)
@@ -159,6 +160,9 @@ class LoginViewController: UIViewController {
             }
             
             let user = result.user
+            
+            UserDefaults.standard.set(email, forKey:"email")
+            
             print("Logged In User: \(user)")
             strongSelf.navigationController?.dismiss(animated: true, completion: nil)
         })
@@ -230,8 +234,7 @@ extension LoginViewController: LoginButtonDelegate{
             }
             
             
-            //            let firstName = nameComponents[0]
-            //            let lastName = nameComponents[1]
+            UserDefaults.standard.set(email, forKey: "email")
             
             DatabaseManager.shared.userExists(with: email, compeletion: {exits in
                 if !exits{
