@@ -117,6 +117,82 @@ extension DatabaseManager{
     }
 }
 
+/*
+ 
+    users => [
+ 
+        [
+            "name":
+            "safe_email":
+        ],
+        [
+            "name":
+            "safe_email":
+        ]
+    ]
+ 
+ */
+
+
+//MARK: - Sending messages / conversations
+
+extension DatabaseManager{
+    
+    /*
+        "fsdafewfs" {
+            "messages":[
+                {
+                    "id": String,
+                    "type": text, photo, video,
+                    "content": String,
+                    "date": Date(),
+                    "sender_email": String,
+                    "isRead": true/false,
+     
+                }
+     
+            ]
+        
+        }
+        
+     
+        conversation => [
+     
+            [
+                "conversation_id": "fsdafewfs"
+                "other_user_email":
+                "latest_message": => {
+                    "date: Date()
+                    "latest_message": "message"
+                    "is_read": true/false
+                }
+            ],
+        ]
+     
+     */
+    
+    // Creates a new conversation with target user email and first messgae sent
+    public func createNewConversation(with otherUserEmail: String, firstMessage:Message, completion: @escaping (Bool)->Void ){
+        //44:03
+    }
+    
+    // Fetches and returns all conversations for the user with passed in email
+    public func getAllConversations(for email: String, completion: @escaping (Result<String, Error>) -> Void){
+        
+    }
+    
+    // Gets all messagees for a givven conversation
+    public func getAllMessagesForConversation(with id: String, completion: @escaping (Result<String, Error>)->Void){
+        
+    }
+    
+    // Sends a message with tarfet conversation and message
+    public func sendMessage(to conversation: String, message: Message,compeletion: @escaping (Bool)->Void){
+        
+        
+    }
+    
+}
 
 
 struct ChatAppUser{
